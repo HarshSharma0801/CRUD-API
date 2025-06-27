@@ -3,8 +3,8 @@ appId: 0
 appName: "crud-server"
 command: "node index.js"
 port: 5000
-dnsPort: 26789
-proxyPort: 16789
+dnsPort: 46789
+proxyPort: 36789
 debug: false
 disableTele: false
 disableANSI: false

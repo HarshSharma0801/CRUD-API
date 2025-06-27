@@ -3,7 +3,7 @@ appId: 0
 appName: "crud-client"
 command: "npm run dev"
 port: 5173
-dnsPort: 26789
+dnsPort: 36789
 proxyPort: 16789
 debug: false
 disableTele: false

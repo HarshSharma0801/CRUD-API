@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+    title: test-1
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:5000
+paths:
+    /edit/66fd7ccc5aaa7ef7c1c5771b:
+        get:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:5000
+                - name: If-None-Match
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: W/"74-KefMk/cdMzq6OuW5LyUBuqyIios"
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+                - name: Accept-Language
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: en-GB,en-US;q=0.9,en;q=0.8
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Sec-Ch-Ua
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
+                - name: Sec-Ch-Ua-Mobile
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: ?0
+                - name: Sec-Ch-Ua-Platform
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Linux"'
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173/
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: same-site
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json, text/plain, */*
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+            operationId: 61341d77d8d4577d46e0c796dd18b787-20250627135240
+            responses:
+                "304":
+                    description: Not Modified
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties: {}
+                            example: {}
+components: {}

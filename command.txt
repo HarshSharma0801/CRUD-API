@@ -1,0 +1,3 @@
+keploy contract generate
+
+keploy contract test --driven "consumer" 
