@@ -1,6 +1,6 @@
 path: ""
 appId: 0
-appName: "crud-client"
+appName: "client"
 command: "npm run dev"
 port: 5173
 dnsPort: 36789
@@ -52,7 +52,7 @@ contract:
         - /read
         - /edit/:id
         - /delete/:id
-    self: crud-client
+    self: client
 inCi: false
 
 # Visit [https://keploy.io/docs/running-keploy/configuration-file/] to learn about using keploy through configuration file. 

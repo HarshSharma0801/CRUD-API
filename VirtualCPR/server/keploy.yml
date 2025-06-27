@@ -1,6 +1,6 @@
 path: ""
 appId: 0
-appName: "crud-server"
+appName: "server"
 command: "node index.js"
 port: 5000
 dnsPort: 46789
@@ -53,7 +53,7 @@ contract:
         - /read
         - /edit/:id
         - /delete/:id
-    self: crud-server
+    self: server
 inCi: false
 
 # Visit [https://keploy.io/docs/running-keploy/configuration-file/] to learn about using keploy through configuration file. 
