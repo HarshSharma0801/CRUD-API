@@ -8,59 +8,50 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/AddUser
+        url: http://localhost:5173/
         header:
-            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
-            Connection: keep-alive
+            Cache-Control: no-cache
+            Connection: Upgrade
             Host: localhost:5173
-            If-None-Match: W/"2a2-+TF4QPANxd7MncWl2uJwo2VI3UI"
-            Referer: http://localhost:5173/Read
-            Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
-            Sec-Ch-Ua-Mobile: ?0
-            Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: document
-            Sec-Fetch-Mode: navigate
-            Sec-Fetch-Site: same-origin
-            Sec-Fetch-User: ?1
-            Upgrade-Insecure-Requests: "1"
+            Origin: http://localhost:5173
+            Pragma: no-cache
+            Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits
+            Sec-Websocket-Key: L9uYVKjXTf+yy7Li3byuJg==
+            Sec-Websocket-Protocol: vite-hmr
+            Sec-Websocket-Version: "13"
+            Upgrade: websocket
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T14:02:03.787208656+05:30
+        timestamp: 2025-06-27T19:07:25.226796383+05:30
     resp:
-        status_code: 304
+        status_code: 101
         header:
-            Access-Control-Allow-Origin: '*'
-            Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:32:03 GMT
-            Keep-Alive: timeout=5
+            Connection: Upgrade
+            Sec-Websocket-Accept: vraZOxoBb09KW3/qT8QZ7NPjPmk=
+            Sec-Websocket-Protocol: vite-hmr
+            Upgrade: websocket
         body: ""
-        status_message: Not Modified
+        status_message: Switching Protocols
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T14:02:03.876667067+05:30
+        timestamp: 2025-06-27T19:07:27.286752588+05:30
     objects: []
-    assertions:
-        noise:
-            header.Date: []
-    created: 1751013123
+    created: 1751031447
 curl: |
     curl --request GET \
-      --url http://localhost:5173/AddUser \
-      --header 'Connection: keep-alive' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Sec-Fetch-User: ?1' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'Sec-Fetch-Mode: navigate' \
+      --url http://localhost:5173/ \
+      --header 'Sec-Websocket-Key: L9uYVKjXTf+yy7Li3byuJg==' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Sec-Websocket-Version: 13' \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Sec-Fetch-Dest: document' \
-      --header 'Host: localhost:5173' \
-      --header 'If-None-Match: W/"2a2-+TF4QPANxd7MncWl2uJwo2VI3UI"' \
-      --header 'Referer: http://localhost:5173/Read' \
       --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Upgrade-Insecure-Requests: 1' \
-      --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+      --header 'Sec-Websocket-Protocol: vite-hmr' \
+      --header 'Host: localhost:5173' \
+      --header 'Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits' \
+      --header 'Upgrade: websocket' \
       --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Connection: Upgrade' \
+      --header 'Pragma: no-cache' \

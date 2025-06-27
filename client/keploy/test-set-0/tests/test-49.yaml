@@ -8,57 +8,50 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/src/App.jsx
+        url: http://localhost:5173/
         header:
-            Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
-            Connection: keep-alive
+            Cache-Control: no-cache
+            Connection: Upgrade
             Host: localhost:5173
-            If-None-Match: W/"1488-J5c5VmIs9RjEbiovZJdsMyPL1Do"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/src/main.jsx
-            Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
-            Sec-Ch-Ua-Mobile: ?0
-            Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: script
-            Sec-Fetch-Mode: cors
-            Sec-Fetch-Site: same-origin
+            Pragma: no-cache
+            Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits
+            Sec-Websocket-Key: HcF5RVuxIVpPHAsMnwJ11g==
+            Sec-Websocket-Protocol: vite-hmr
+            Sec-Websocket-Version: "13"
+            Upgrade: websocket
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:42:05.45829698+05:30
+        timestamp: 2025-06-27T19:05:54.722461723+05:30
     resp:
-        status_code: 304
+        status_code: 101
         header:
-            Access-Control-Allow-Origin: '*'
-            Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:12:05 GMT
-            Keep-Alive: timeout=5
+            Connection: Upgrade
+            Sec-Websocket-Accept: LGtEo6sAIRClLMK8QsCy9A3InvQ=
+            Sec-Websocket-Protocol: vite-hmr
+            Upgrade: websocket
         body: ""
-        status_message: Not Modified
+        status_message: Switching Protocols
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:42:05.902284152+05:30
+        timestamp: 2025-06-27T19:05:56.737139679+05:30
     objects: []
-    assertions:
-        noise:
-            header.Date: []
-    created: 1751011925
+    created: 1751031356
 curl: |
     curl --request GET \
-      --url http://localhost:5173/src/App.jsx \
-      --header 'Referer: http://localhost:5173/src/main.jsx' \
-      --header 'If-None-Match: W/"1488-J5c5VmIs9RjEbiovZJdsMyPL1Do"' \
+      --url http://localhost:5173/ \
+      --header 'Pragma: no-cache' \
+      --header 'Upgrade: websocket' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Sec-Websocket-Protocol: vite-hmr' \
       --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Origin: http://localhost:5173' \
-      --header 'Sec-Fetch-Dest: script' \
+      --header 'Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits' \
+      --header 'Sec-Websocket-Version: 13' \
+      --header 'Connection: Upgrade' \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Accept: */*' \
       --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
       --header 'Host: localhost:5173' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'Connection: keep-alive' \
-      --header 'Sec-Fetch-Mode: cors' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Sec-Websocket-Key: HcF5RVuxIVpPHAsMnwJ11g==' \

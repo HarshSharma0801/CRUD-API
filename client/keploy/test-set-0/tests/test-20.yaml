@@ -8,57 +8,57 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/vite.svg
+        url: http://localhost:5173/src/index.css
         header:
-            Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+            Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
             Connection: keep-alive
             Host: localhost:5173
-            If-Modified-Since: Fri, 27 Jun 2025 07:46:45 GMT
-            If-None-Match: W/"1497-1751010405893"
-            Referer: http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b
+            If-None-Match: W/"43f9-VmR4Jysow2D80qZgpA2iV/Lk7Sk"
+            Origin: http://localhost:5173
+            Referer: http://localhost:5173/src/main.jsx
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: image
-            Sec-Fetch-Mode: no-cors
+            Sec-Fetch-Dest: script
+            Sec-Fetch-Mode: cors
             Sec-Fetch-Site: same-origin
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:50.74805059+05:30
+        timestamp: 2025-06-27T19:05:51.779057244+05:30
     resp:
         status_code: 304
         header:
             Access-Control-Allow-Origin: '*'
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:50 GMT
+            Date: Fri, 27 Jun 2025 13:35:51 GMT
             Keep-Alive: timeout=5
         body: ""
         status_message: Not Modified
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:52.835645277+05:30
+        timestamp: 2025-06-27T19:05:51.898437604+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011912
+    created: 1751031351
 curl: |
     curl --request GET \
-      --url http://localhost:5173/vite.svg \
-      --header 'Connection: keep-alive' \
-      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Referer: http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'Host: localhost:5173' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Sec-Fetch-Mode: no-cors' \
+      --url http://localhost:5173/src/index.css \
       --header 'Sec-Fetch-Site: same-origin' \
-      --header 'If-Modified-Since: Fri, 27 Jun 2025 07:46:45 GMT' \
-      --header 'Sec-Fetch-Dest: image' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \
+      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
+      --header 'Host: localhost:5173' \
+      --header 'Sec-Fetch-Dest: script' \
+      --header 'If-None-Match: W/"43f9-VmR4Jysow2D80qZgpA2iV/Lk7Sk"' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
       --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'If-None-Match: W/"1497-1751010405893"' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Connection: keep-alive' \
+      --header 'Referer: http://localhost:5173/src/main.jsx' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Accept: */*' \

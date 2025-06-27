@@ -8,57 +8,50 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/src/DeleteUser/DeleteApi.jsx
+        url: http://localhost:5173/
         header:
-            Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
-            Connection: keep-alive
+            Cache-Control: no-cache
+            Connection: Upgrade
             Host: localhost:5173
-            If-None-Match: W/"752-CuuYqto5ER4K3YHv7J+dpKTJD7g"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/src/Components/ReadUsers/table.jsx
-            Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
-            Sec-Ch-Ua-Mobile: ?0
-            Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: script
-            Sec-Fetch-Mode: cors
-            Sec-Fetch-Site: same-origin
+            Pragma: no-cache
+            Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits
+            Sec-Websocket-Key: lohGovRE5GE1VzcUPZBiiw==
+            Sec-Websocket-Protocol: vite-hmr
+            Sec-Websocket-Version: "13"
+            Upgrade: websocket
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:55.277857955+05:30
+        timestamp: 2025-06-27T19:05:52.056847811+05:30
     resp:
-        status_code: 304
+        status_code: 101
         header:
-            Access-Control-Allow-Origin: '*'
-            Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:55 GMT
-            Keep-Alive: timeout=5
+            Connection: Upgrade
+            Sec-Websocket-Accept: utqPi81GYfxtQnH7XkBvZveYbUw=
+            Sec-Websocket-Protocol: vite-hmr
+            Upgrade: websocket
         body: ""
-        status_message: Not Modified
+        status_message: Switching Protocols
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:56.254851+05:30
+        timestamp: 2025-06-27T19:05:54.1136894+05:30
     objects: []
-    assertions:
-        noise:
-            header.Date: []
-    created: 1751011916
+    created: 1751031354
 curl: |
     curl --request GET \
-      --url http://localhost:5173/src/DeleteUser/DeleteApi.jsx \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'Accept: */*' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Connection: keep-alive' \
-      --header 'Sec-Fetch-Mode: cors' \
+      --url http://localhost:5173/ \
       --header 'Host: localhost:5173' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'Referer: http://localhost:5173/src/Components/ReadUsers/table.jsx' \
-      --header 'Sec-Fetch-Dest: script' \
+      --header 'Cache-Control: no-cache' \
       --header 'Origin: http://localhost:5173' \
-      --header 'If-None-Match: W/"752-CuuYqto5ER4K3YHv7J+dpKTJD7g"' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
+      --header 'Connection: Upgrade' \
+      --header 'Sec-Websocket-Protocol: vite-hmr' \
+      --header 'Pragma: no-cache' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Sec-Websocket-Key: lohGovRE5GE1VzcUPZBiiw==' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Upgrade: websocket' \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
+      --header 'Sec-Websocket-Version: 13' \
+      --header 'Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits' \

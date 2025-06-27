@@ -8,16 +8,16 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/node_modules/vite/dist/client/env.mjs
+        url: http://localhost:5173/src/Components/EditUsers/Edit.jsx
         header:
             Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
             Connection: keep-alive
             Host: localhost:5173
-            If-None-Match: W/"2ff-3CVVQlk4cF08jaLBwUNEnnf9EOg"
+            If-None-Match: W/"1faf-ht08Hz1GDdAuSy7wuS9GQKD8ipM"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/@vite/client
+            Referer: http://localhost:5173/src/App.jsx
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
@@ -26,39 +26,210 @@ spec:
             Sec-Fetch-Site: same-origin
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:50.072794066+05:30
+        timestamp: 2025-06-27T19:05:51.348791121+05:30
     resp:
-        status_code: 304
+        status_code: 200
         header:
             Access-Control-Allow-Origin: '*'
+            Cache-Control: no-cache
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:50 GMT
+            Content-Length: "16934"
+            Content-Type: application/javascript
+            Date: Fri, 27 Jun 2025 13:35:51 GMT
+            Etag: W/"1ecf-MoohPbjOFwqRy98EsuOpfXwk+JM"
             Keep-Alive: timeout=5
-        body: ""
-        status_message: Not Modified
+        body: |-
+            import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/Components/EditUsers/Edit.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=3349f836"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+            import RefreshRuntime from "/@react-refresh";
+            const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+            let prevRefreshReg;
+            let prevRefreshSig;
+            if (import.meta.hot && !inWebWorker) {
+              if (!window.__vite_plugin_react_preamble_installed__) {
+                throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+              }
+              prevRefreshReg = window.$RefreshReg$;
+              prevRefreshSig = window.$RefreshSig$;
+              window.$RefreshReg$ = (type, id) => {
+                RefreshRuntime.register(type, "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx " + id);
+              };
+              window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+            }
+            var _s = $RefreshSig$();
+            import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=3349f836"; const useState = __vite__cjsImport3_react["useState"]; const useEffect = __vite__cjsImport3_react["useEffect"];
+            import { useNavigate, useParams } from "/node_modules/.vite/deps/react-router-dom.js?v=3349f836";
+            import Update from "/src/Components/EditUsers/UpdateApi.jsx";
+            import axios from "/node_modules/.vite/deps/axios.js?v=3349f836";
+            const Edit = () => {
+              _s();
+              const [userData, setUserData] = useState({
+                name: "",
+                githubUsername: "",
+                YourQuote: ""
+              });
+              const [info, Setinfo] = useState({});
+              const Navigate = useNavigate();
+              const {
+                id
+              } = useParams();
+              const getUser = async () => {
+                try {
+                  const res = await axios.get(`/edit/${id}`);
+                  console.log(id);
+                  if (res.data.success) {
+                    console.log(res.data.data);
+                    setUserData(res.data.data);
+                  } else {
+                    console.error("Failed to fetch user:", res.data.message);
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
+              };
+              useEffect(() => {
+                getUser();
+              }, []);
+              const handleChange = (e) => {
+                const {
+                  name,
+                  value
+                } = e.target;
+                setUserData({
+                  ...userData,
+                  [name]: value
+                });
+              };
+              const handleSubmit = (e) => {
+                e.preventDefault();
+                console.log(userData);
+                Update(userData, id);
+                setUserData({
+                  name: "",
+                  githubUsername: "",
+                  YourQuote: ""
+                });
+                setTimeout(() => {
+                  Navigate("/Read");
+                }, 1e3);
+              };
+              useEffect(() => {
+                setUserData(info);
+              }, [info]);
+              return /* @__PURE__ */ jsxDEV("div", { className: "max-w-md mx-auto mt-8", children: /* @__PURE__ */ jsxDEV("form", { onSubmit: handleSubmit, className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4", children: [
+                /* @__PURE__ */ jsxDEV("div", { className: "mb-4", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "block text-gray-700 text-sm font-bold mb-2", htmlFor: "name", children: "Name" }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 64,
+                    columnNumber: 11
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("input", { className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", id: "name", type: "text", placeholder: "Name", name: "name", value: userData.name, onChange: handleChange, required: true }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 67,
+                    columnNumber: 11
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                  lineNumber: 63,
+                  columnNumber: 9
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "mb-4", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "block text-gray-700 text-sm font-bold mb-2", htmlFor: "email", children: "GitHub Username" }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 71,
+                    columnNumber: 11
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("input", { className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", id: "Github", type: "text", placeholder: "GitHub Username", name: "githubUsername", value: userData.githubUsername, onChange: handleChange, required: true }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 74,
+                    columnNumber: 11
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                  lineNumber: 70,
+                  columnNumber: 9
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "mb-4", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "block text-gray-700 text-sm font-bold mb-2", htmlFor: "email", children: "Your Quote" }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 78,
+                    columnNumber: 11
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("input", { className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", id: "quote", type: "text", placeholder: "Your Quote", name: "YourQuote", value: userData.YourQuote, onChange: handleChange, required: true }, void 0, false, {
+                    fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                    lineNumber: 81,
+                    columnNumber: 11
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                  lineNumber: 77,
+                  columnNumber: 9
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ jsxDEV("button", { className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", type: "submit", children: "Edit User" }, void 0, false, {
+                  fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                  lineNumber: 85,
+                  columnNumber: 11
+                }, this) }, void 0, false, {
+                  fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                  lineNumber: 84,
+                  columnNumber: 9
+                }, this)
+              ] }, void 0, true, {
+                fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                lineNumber: 62,
+                columnNumber: 7
+              }, this) }, void 0, false, {
+                fileName: "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx",
+                lineNumber: 61,
+                columnNumber: 10
+              }, this);
+            };
+            _s(Edit, "5dbvRxykyuQAs/UZ8C1mPCRA4no=", false, function() {
+              return [useNavigate, useParams];
+            });
+            _c = Edit;
+            export default Edit;
+            var _c;
+            $RefreshReg$(_c, "Edit");
+            if (import.meta.hot && !inWebWorker) {
+              window.$RefreshReg$ = prevRefreshReg;
+              window.$RefreshSig$ = prevRefreshSig;
+              RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+                RefreshRuntime.registerExportsForReactRefresh("/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/Edit.jsx", currentExports);
+                import.meta.hot.accept((nextExports) => {
+                  if (!nextExports)
+                    return;
+                  const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+                  if (invalidateMessage)
+                    import.meta.hot.invalidate(invalidateMessage);
+                });
+              });
+            }
+
+            //# sourceMappingURL=data:application/json;base64,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QUE7QUFBQSxhQVFVO0FBQUEsU0FmWjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBaUJBO0FBQUEsSUFFQSx1QkFBQyxTQUFJLFdBQVUsUUFDYjtBQUFBLDZCQUFDLFdBQ0MsV0FBVSw4Q0FDVixTQUFRLFNBQU8sMEJBRmpCO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFLQTtBQUFBLE1BQ0EsdUJBQUMsV0FDQyxXQUFVLDhIQUNWLElBQUcsU0FDSCxNQUFLLFFBQ0wsYUFBWSxjQUNaLE1BQUssYUFDTCxPQUFPbEIsU0FBU0ksV0FDaEIsVUFBVWMsY0FDVixVQUFRLFFBUlY7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQVFVO0FBQUEsU0FmWjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBaUJBO0FBQUEsSUFFQSx1QkFBQyxTQUFJLFdBQVUscUNBQ2IsaUNBQUMsWUFDQyxXQUFVLGdIQUNWLE1BQUssVUFBUSx5QkFGZjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBS0EsS0FORjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBT0E7QUFBQSxPQXBFRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBcUVBLEtBdEVGO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0F1RUE7QUFFSjtBQUFFbkIsR0F0SUlELE1BQUk7QUFBQSxVQVNTSixhQUVGQyxTQUFTO0FBQUE7QUFBQThCLEtBWHBCM0I7QUF3SU4sZUFBZUE7QUFBSyxJQUFBMkI7QUFBQUMsYUFBQUQsSUFBQSIsIm5hbWVzIjpbInVzZVN0YXRlIiwidXNlRWZmZWN0IiwidXNlTmF2aWdhdGUiLCJ1c2VQYXJhbXMiLCJVcGRhdGUiLCJheGlvcyIsIkVkaXQiLCJfcyIsInVzZXJEYXRhIiwic2V0VXNlckRhdGEiLCJuYW1lIiwiZ2l0aHViVXNlcm5hbWUiLCJZb3VyUXVvdGUiLCJpbmZvIiwiU2V0aW5mbyIsIk5hdmlnYXRlIiwiaWQiLCJnZXRVc2VyIiwicmVzIiwiZ2V0IiwiY29uc29sZSIsImxvZyIsImRhdGEiLCJzdWNjZXNzIiwiZXJyb3IiLCJtZXNzYWdlIiwiaGFuZGxlQ2hhbmdlIiwiZSIsInZhbHVlIiwidGFyZ2V0IiwiaGFuZGxlU3VibWl0IiwicHJldmVudERlZmF1bHQiLCJzZXRUaW1lb3V0IiwiX2MiLCIkUmVmcmVzaFJlZyQiXSwic291cmNlcyI6WyJFZGl0LmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyB1c2VOYXZpZ2F0ZSwgdXNlUGFyYW1zIH0gZnJvbSBcInJlYWN0LXJvdXRlci1kb21cIjtcbmltcG9ydCBVcGRhdGUgZnJvbSBcIi4vVXBkYXRlQXBpXCI7XG5pbXBvcnQgYXhpb3MgZnJvbSBcImF4aW9zXCI7XG5jb25zdCBFZGl0ID0gKCkgPT4ge1xuICBjb25zdCBbdXNlckRhdGEsIHNldFVzZXJEYXRhXSA9IHVzZVN0YXRlKHtcbiAgICBuYW1lOiBcIlwiLFxuICAgIGdpdGh1YlVzZXJuYW1lOiBcIlwiLFxuICAgIFlvdXJRdW90ZTogXCJcIixcbiAgfSk7XG5cbiAgY29uc3QgW2luZm8sIFNldGluZm9dID0gdXNlU3RhdGUoe30pO1xuXG4gIGNvbnN0IE5hdmlnYXRlID0gdXNlTmF2aWdhdGUoKTtcblxuICBjb25zdCB7IGlkIH0gPSB1c2VQYXJhbXMoKTtcblxuICBjb25zdCBnZXRVc2VyID0gYXN5bmMgKCkgPT4ge1xuICAgIHRyeSB7XG4gICAgICBjb25zdCByZXMgPSBhd2FpdCBheGlvcy5nZXQoYC9lZGl0LyR7aWR9YCk7XG4gICAgICBjb25zb2xlLmxvZyhpZCk7XG4gICAgICBpZiAocmVzLmRhdGEuc3VjY2Vzcykge1xuICAgICAgICBjb25zb2xlLmxvZyhyZXMuZGF0YS5kYXRhKTtcbiAgICAgICAgc2V0VXNlckRhdGEocmVzLmRhdGEuZGF0YSk7XG4gICAgICB9IGVsc2Uge1xuICAgICAgICBjb25zb2xlLmVycm9yKFwiRmFpbGVkIHRvIGZldGNoIHVzZXI6XCIsIHJlcy5kYXRhLm1lc3NhZ2UpO1xuICAgICAgfVxuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICBjb25zb2xlLmxvZyhlcnJvcik7XG4gICAgfVxuICB9O1xuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgZ2V0VXNlcigpO1xuICB9LCBbXSk7XG5cbiAgY29uc3QgaGFuZGxlQ2hhbmdlID0gKGUpID0+IHtcbiAgICBjb25zdCB7IG5hbWUsIHZhbHVlIH0gPSBlLnRhcmdldDtcbiAgICBzZXRVc2VyRGF0YSh7XG4gICAgICAuLi51c2VyRGF0YSxcbiAgICAgIFtuYW1lXTogdmFsdWUsXG4gICAgfSk7XG4gIH07XG5cbiAgY29uc3QgaGFuZGxlU3VibWl0ID0gKGUpID0+IHtcbiAgICBlLnByZXZlbnREZWZhdWx0KCk7XG5cbiAgICBjb25zb2xlLmxvZyh1c2VyRGF0YSk7XG4gICAgVXBkYXRlKHVzZXJEYXRhLCBpZCk7XG5cbiAgICBzZXRVc2VyRGF0YSh7XG4gICAgICBuYW1lOiBcIlwiLFxuICAgICAgZ2l0aHViVXNlcm5hbWU6IFwiXCIsXG4gICAgICBZb3VyUXVvdGU6IFwiXCIsXG4gICAgfSk7XG4gICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICBOYXZpZ2F0ZShcIi9SZWFkXCIpO1xuICAgIH0sIDEwMDApO1xuICB9O1xuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgc2V0VXNlckRhdGEoaW5mbyk7XG4gIH0sIFtpbmZvXSk7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm1heC13LW1kIG14LWF1dG8gbXQtOFwiPlxuICAgICAgPGZvcm1cbiAgICAgICAgb25TdWJtaXQ9e2hhbmRsZVN1Ym1pdH1cbiAgICAgICAgY2xhc3NOYW1lPVwiYmctd2hpdGUgc2hhZG93LW1kIHJvdW5kZWQgcHgtOCBwdC02IHBiLTggbWItNFwiXG4gICAgICA+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWItNFwiPlxuICAgICAgICAgIDxsYWJlbFxuICAgICAgICAgICAgY2xhc3NOYW1lPVwiYmxvY2sgdGV4dC1ncmF5LTcwMCB0ZXh0LXNtIGZvbnQtYm9sZCBtYi0yXCJcbiAgICAgICAgICAgIGh0bWxGb3I9XCJuYW1lXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICBOYW1lXG4gICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICA8aW5wdXRcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cInNoYWRvdyBhcHBlYXJhbmNlLW5vbmUgYm9yZGVyIHJvdW5kZWQgdy1mdWxsIHB5LTIgcHgtMyB0ZXh0LWdyYXktNzAwIGxlYWRpbmctdGlnaHQgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnNoYWRvdy1vdXRsaW5lXCJcbiAgICAgICAgICAgIGlkPVwibmFtZVwiXG4gICAgICAgICAgICB0eXBlPVwidGV4dFwiXG4gICAgICAgICAgICBwbGFjZWhvbGRlcj1cIk5hbWVcIlxuICAgICAgICAgICAgbmFtZT1cIm5hbWVcIlxuICAgICAgICAgICAgdmFsdWU9e3VzZXJEYXRhLm5hbWV9XG4gICAgICAgICAgICBvbkNoYW5nZT17aGFuZGxlQ2hhbmdlfVxuICAgICAgICAgICAgcmVxdWlyZWRcbiAgICAgICAgICAvPlxuICAgICAgICA8L2Rpdj5cblxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1iLTRcIj5cbiAgICAgICAgICA8bGFiZWxcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cImJsb2NrIHRleHQtZ3JheS03MDAgdGV4dC1zbSBmb250LWJvbGQgbWItMlwiXG4gICAgICAgICAgICBodG1sRm9yPVwiZW1haWxcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIEdpdEh1YiBVc2VybmFtZVxuICAgICAgICAgIDwvbGFiZWw+XG4gICAgICAgICAgPGlucHV0XG4gICAgICAgICAgICBjbGFzc05hbWU9XCJzaGFkb3cgYXBwZWFyYW5jZS1ub25lIGJvcmRlciByb3VuZGVkIHctZnVsbCBweS0yIHB4LTMgdGV4dC1ncmF5LTcwMCBsZWFkaW5nLXRpZ2h0IGZvY3VzOm91dGxpbmUtbm9uZSBmb2N1czpzaGFkb3ctb3V0bGluZVwiXG4gICAgICAgICAgICBpZD1cIkdpdGh1YlwiXG4gICAgICAgICAgICB0eXBlPVwidGV4dFwiXG4gICAgICAgICAgICBwbGFjZWhvbGRlcj1cIkdpdEh1YiBVc2VybmFtZVwiXG4gICAgICAgICAgICBuYW1lPVwiZ2l0aHViVXNlcm5hbWVcIlxuICAgICAgICAgICAgdmFsdWU9e3VzZXJEYXRhLmdpdGh1YlVzZXJuYW1lfVxuICAgICAgICAgICAgb25DaGFuZ2U9e2hhbmRsZUNoYW5nZX1cbiAgICAgICAgICAgIHJlcXVpcmVkXG4gICAgICAgICAgLz5cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYi00XCI+XG4gICAgICAgICAgPGxhYmVsXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJibG9jayB0ZXh0LWdyYXktNzAwIHRleHQtc20gZm9udC1ib2xkIG1iLTJcIlxuICAgICAgICAgICAgaHRtbEZvcj1cImVtYWlsXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICBZb3VyIFF1b3RlXG4gICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICA8aW5wdXRcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cInNoYWRvdyBhcHBlYXJhbmNlLW5vbmUgYm9yZGVyIHJvdW5kZWQgdy1mdWxsIHB5LTIgcHgtMyB0ZXh0LWdyYXktNzAwIGxlYWRpbmctdGlnaHQgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnNoYWRvdy1vdXRsaW5lXCJcbiAgICAgICAgICAgIGlkPVwicXVvdGVcIlxuICAgICAgICAgICAgdHlwZT1cInRleHRcIlxuICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJZb3VyIFF1b3RlXCJcbiAgICAgICAgICAgIG5hbWU9XCJZb3VyUXVvdGVcIlxuICAgICAgICAgICAgdmFsdWU9e3VzZXJEYXRhLllvdXJRdW90ZX1cbiAgICAgICAgICAgIG9uQ2hhbmdlPXtoYW5kbGVDaGFuZ2V9XG4gICAgICAgICAgICByZXF1aXJlZFxuICAgICAgICAgIC8+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuXCI+XG4gICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgY2xhc3NOYW1lPVwiYmctYmx1ZS01MDAgaG92ZXI6YmctYmx1ZS03MDAgdGV4dC13aGl0ZSBmb250LWJvbGQgcHktMiBweC00IHJvdW5kZWQgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnNoYWRvdy1vdXRsaW5lXCJcbiAgICAgICAgICAgIHR5cGU9XCJzdWJtaXRcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIEVkaXQgVXNlclxuICAgICAgICAgIDwvYnV0dG9uPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZm9ybT5cbiAgICA8L2Rpdj5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IEVkaXQ7XG4iXSwiZmlsZSI6Ii9ob21lL2hhcnNoLXNoYXJtYS9EZXNrdG9wL0NSVUQtQVBJL2NsaWVudC9zcmMvQ29tcG9uZW50cy9FZGl0VXNlcnMvRWRpdC5qc3gifQ==
+        status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:52.228802299+05:30
+        timestamp: 2025-06-27T19:05:51.797373282+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011912
+    created: 1751031351
 curl: |
     curl --request GET \
-      --url http://localhost:5173/node_modules/vite/dist/client/env.mjs \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Sec-Fetch-Dest: script' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Accept: */*' \
-      --header 'Host: localhost:5173' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Sec-Fetch-Mode: cors' \
-      --header 'Origin: http://localhost:5173' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --url http://localhost:5173/src/Components/EditUsers/Edit.jsx \
       --header 'Connection: keep-alive' \
-      --header 'Referer: http://localhost:5173/@vite/client' \
-      --header 'If-None-Match: W/"2ff-3CVVQlk4cF08jaLBwUNEnnf9EOg"' \
+      --header 'Sec-Fetch-Dest: script' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \
+      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
+      --header 'Host: localhost:5173' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
+      --header 'If-None-Match: W/"1faf-ht08Hz1GDdAuSy7wuS9GQKD8ipM"' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Accept: */*' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Referer: http://localhost:5173/src/App.jsx' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Fetch-Site: same-origin' \

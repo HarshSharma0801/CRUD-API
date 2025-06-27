@@ -8,16 +8,16 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/src/Components/Pages/Home.jsx
+        url: http://localhost:5173/src/Components/EditUsers/UpdateApi.jsx
         header:
             Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
             Connection: keep-alive
             Host: localhost:5173
-            If-None-Match: W/"dd8-OCyjazSeZmKKYA8IXD7VFi2gZvk"
+            If-None-Match: W/"7b6-vowEBJSGjqDOKLhlFcONIBWIz/o"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/src/App.jsx
+            Referer: http://localhost:5173/src/Components/EditUsers/Edit.jsx
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
@@ -26,39 +26,95 @@ spec:
             Sec-Fetch-Site: same-origin
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:55.218146337+05:30
+        timestamp: 2025-06-27T19:05:51.785254412+05:30
     resp:
-        status_code: 304
+        status_code: 200
         header:
             Access-Control-Allow-Origin: '*'
+            Cache-Control: no-cache
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:55 GMT
+            Content-Length: "3807"
+            Content-Type: application/javascript
+            Date: Fri, 27 Jun 2025 13:35:51 GMT
+            Etag: W/"838-7BaMejoLSxPUdWChAOz18GFFhGo"
             Keep-Alive: timeout=5
-        body: ""
-        status_message: Not Modified
+        body: |-
+            import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/Components/EditUsers/UpdateApi.jsx");import RefreshRuntime from "/@react-refresh";
+            const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+            let prevRefreshReg;
+            let prevRefreshSig;
+            if (import.meta.hot && !inWebWorker) {
+              if (!window.__vite_plugin_react_preamble_installed__) {
+                throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+              }
+              prevRefreshReg = window.$RefreshReg$;
+              prevRefreshSig = window.$RefreshSig$;
+              window.$RefreshReg$ = (type, id) => {
+                RefreshRuntime.register(type, "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/UpdateApi.jsx " + id);
+              };
+              window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+            }
+            import axios from "/node_modules/.vite/deps/axios.js?v=3349f836";
+            const Update = async (data, id) => {
+              try {
+                data._id = id;
+                const res = await axios.post(`/edit/${id}`, data);
+                if (res.data.success) {
+                  console.log(res.data);
+                  return res.data;
+                } else {
+                  console.error("Failed to update user:", res.data.message);
+                  return res.data;
+                }
+              } catch (error) {
+                console.log(error);
+                throw error;
+              }
+            };
+            _c = Update;
+            export default Update;
+            var _c;
+            $RefreshReg$(_c, "Update");
+            if (import.meta.hot && !inWebWorker) {
+              window.$RefreshReg$ = prevRefreshReg;
+              window.$RefreshSig$ = prevRefreshSig;
+              RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+                RefreshRuntime.registerExportsForReactRefresh("/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/EditUsers/UpdateApi.jsx", currentExports);
+                import.meta.hot.accept((nextExports) => {
+                  if (!nextExports)
+                    return;
+                  const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+                  if (invalidateMessage)
+                    import.meta.hot.invalidate(invalidateMessage);
+                });
+              });
+            }
+
+            //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBQUEsT0FBT0Esb0JBQWtCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBRXpCLE1BQU1DLFNBQVMsT0FBT0MsTUFBTUMsT0FBTztBQUNqQyxNQUFJO0FBQ0ZELFNBQUtFLE1BQU1EO0FBQ1gsVUFBTUUsTUFBTSxNQUFNTCxNQUFNTSxLQUFNLFNBQVFILEVBQUcsSUFBR0QsSUFBSTtBQUNoRCxRQUFJRyxJQUFJSCxLQUFLSyxTQUFTO0FBQ3BCQyxjQUFRQyxJQUFJSixJQUFJSCxJQUFJO0FBQ3BCLGFBQU9HLElBQUlIO0FBQUFBLElBQ2IsT0FBTztBQUNMTSxjQUFRRSxNQUFNLDBCQUEwQkwsSUFBSUgsS0FBS1MsT0FBTztBQUN4RCxhQUFPTixJQUFJSDtBQUFBQSxJQUNiO0FBQUEsRUFDRixTQUFTUSxPQUFPO0FBQ2RGLFlBQVFDLElBQUlDLEtBQUs7QUFDakIsVUFBTUE7QUFBQUEsRUFDUjtBQUNGO0FBQUVFLEtBZklYO0FBaUJOLGVBQWVBO0FBQU8sSUFBQVc7QUFBQUMsYUFBQUQsSUFBQSIsIm5hbWVzIjpbImF4aW9zIiwiVXBkYXRlIiwiZGF0YSIsImlkIiwiX2lkIiwicmVzIiwicG9zdCIsInN1Y2Nlc3MiLCJjb25zb2xlIiwibG9nIiwiZXJyb3IiLCJtZXNzYWdlIiwiX2MiLCIkUmVmcmVzaFJlZyQiXSwic291cmNlcyI6WyJVcGRhdGVBcGkuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBheGlvcyBmcm9tIFwiYXhpb3NcIjtcblxuY29uc3QgVXBkYXRlID0gYXN5bmMgKGRhdGEsIGlkKSA9PiB7XG4gIHRyeSB7XG4gICAgZGF0YS5faWQgPSBpZDtcbiAgICBjb25zdCByZXMgPSBhd2FpdCBheGlvcy5wb3N0KGAvZWRpdC8ke2lkfWAsIGRhdGEpO1xuICAgIGlmIChyZXMuZGF0YS5zdWNjZXNzKSB7XG4gICAgICBjb25zb2xlLmxvZyhyZXMuZGF0YSk7XG4gICAgICByZXR1cm4gcmVzLmRhdGE7XG4gICAgfSBlbHNlIHtcbiAgICAgIGNvbnNvbGUuZXJyb3IoXCJGYWlsZWQgdG8gdXBkYXRlIHVzZXI6XCIsIHJlcy5kYXRhLm1lc3NhZ2UpO1xuICAgICAgcmV0dXJuIHJlcy5kYXRhO1xuICAgIH1cbiAgfSBjYXRjaCAoZXJyb3IpIHtcbiAgICBjb25zb2xlLmxvZyhlcnJvcik7XG4gICAgdGhyb3cgZXJyb3I7XG4gIH1cbn07XG5cbmV4cG9ydCBkZWZhdWx0IFVwZGF0ZTtcbiJdLCJmaWxlIjoiL2hvbWUvaGFyc2gtc2hhcm1hL0Rlc2t0b3AvQ1JVRC1BUEkvY2xpZW50L3NyYy9Db21wb25lbnRzL0VkaXRVc2Vycy9VcGRhdGVBcGkuanN4In0=
+        status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:55.346708819+05:30
+        timestamp: 2025-06-27T19:05:51.999440887+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011915
+    created: 1751031351
 curl: |
     curl --request GET \
-      --url http://localhost:5173/src/Components/Pages/Home.jsx \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'Referer: http://localhost:5173/src/App.jsx' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Connection: keep-alive' \
+      --url http://localhost:5173/src/Components/EditUsers/UpdateApi.jsx \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Host: localhost:5173' \
-      --header 'Sec-Fetch-Mode: cors' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
       --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Sec-Fetch-Dest: script' \
+      --header 'Accept: */*' \
+      --header 'If-None-Match: W/"7b6-vowEBJSGjqDOKLhlFcONIBWIz/o"' \
+      --header 'Referer: http://localhost:5173/src/Components/EditUsers/Edit.jsx' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
       --header 'Origin: http://localhost:5173' \
       --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'If-None-Match: W/"dd8-OCyjazSeZmKKYA8IXD7VFi2gZvk"' \
+      --header 'Host: localhost:5173' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Connection: keep-alive' \
       --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Accept: */*' \
+      --header 'Sec-Fetch-Dest: script' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \

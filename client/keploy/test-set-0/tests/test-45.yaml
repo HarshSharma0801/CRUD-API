@@ -17,7 +17,7 @@ spec:
             Host: localhost:5173
             If-None-Match: W/"5a60-C3pD9jZxvpo5f99YHY6W38XUv6M"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/AddUser
+            Referer: http://localhost:5173/Read
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
@@ -26,39 +26,39 @@ spec:
             Sec-Fetch-Site: same-origin
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:42:05.410530293+05:30
+        timestamp: 2025-06-27T19:05:54.676855434+05:30
     resp:
         status_code: 304
         header:
             Access-Control-Allow-Origin: '*'
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:12:05 GMT
+            Date: Fri, 27 Jun 2025 13:35:54 GMT
             Keep-Alive: timeout=5
         body: ""
         status_message: Not Modified
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:42:05.699564964+05:30
+        timestamp: 2025-06-27T19:05:55.021712239+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011925
+    created: 1751031355
 curl: |
     curl --request GET \
       --url http://localhost:5173/@react-refresh \
+      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
       --header 'Sec-Fetch-Site: same-origin' \
       --header 'Host: localhost:5173' \
-      --header 'Connection: keep-alive' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
       --header 'Sec-Fetch-Dest: script' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Referer: http://localhost:5173/Read' \
+      --header 'Accept: */*' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Connection: keep-alive' \
       --header 'Sec-Fetch-Mode: cors' \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Accept: */*' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'Referer: http://localhost:5173/AddUser' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
       --header 'If-None-Match: W/"5a60-C3pD9jZxvpo5f99YHY6W38XUv6M"' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \
       --header 'Origin: http://localhost:5173' \

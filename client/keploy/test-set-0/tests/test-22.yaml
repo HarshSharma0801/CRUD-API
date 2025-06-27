@@ -8,61 +8,113 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b
+        url: http://localhost:5173/src/Components/AddUser/AddApi.jsx
         header:
-            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+            Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
-            Cache-Control: max-age=0
             Connection: keep-alive
             Host: localhost:5173
-            If-None-Match: W/"2a2-+TF4QPANxd7MncWl2uJwo2VI3UI"
-            Referer: http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b
+            If-None-Match: W/"7dc-K3O6+UrV67LVokonTGZp5JUP9cs"
+            Origin: http://localhost:5173
+            Referer: http://localhost:5173/src/Components/AddUser/Add.jsx
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: document
-            Sec-Fetch-Mode: navigate
+            Sec-Fetch-Dest: script
+            Sec-Fetch-Mode: cors
             Sec-Fetch-Site: same-origin
-            Sec-Fetch-User: ?1
-            Upgrade-Insecure-Requests: "1"
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:55.113494547+05:30
+        timestamp: 2025-06-27T19:05:51.791433432+05:30
     resp:
-        status_code: 304
+        status_code: 200
         header:
             Access-Control-Allow-Origin: '*'
+            Cache-Control: no-cache
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:55 GMT
+            Content-Length: "3914"
+            Content-Type: application/javascript
+            Date: Fri, 27 Jun 2025 13:35:51 GMT
+            Etag: W/"853-L8Kte1Jhayx5HGmRRVKeeRob830"
             Keep-Alive: timeout=5
-        body: ""
-        status_message: Not Modified
+        body: |-
+            import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/Components/AddUser/AddApi.jsx");import RefreshRuntime from "/@react-refresh";
+            const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+            let prevRefreshReg;
+            let prevRefreshSig;
+            if (import.meta.hot && !inWebWorker) {
+              if (!window.__vite_plugin_react_preamble_installed__) {
+                throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+              }
+              prevRefreshReg = window.$RefreshReg$;
+              prevRefreshSig = window.$RefreshSig$;
+              window.$RefreshReg$ = (type, id) => {
+                RefreshRuntime.register(type, "/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/AddUser/AddApi.jsx " + id);
+              };
+              window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+            }
+            import axios from "/node_modules/.vite/deps/axios.js?v=3349f836";
+            import { useNavigate } from "/node_modules/.vite/deps/react-router-dom.js?v=3349f836";
+            const Add = async (data) => {
+              try {
+                const res = await axios.post("/add", data);
+                if (res.data.success) {
+                  console.log(res.data);
+                  return res.data;
+                } else {
+                  console.error("Failed to add user:", res.data.message);
+                  return res.data;
+                }
+              } catch (error) {
+                console.log(error);
+                throw error;
+              }
+            };
+            _c = Add;
+            export default Add;
+            var _c;
+            $RefreshReg$(_c, "Add");
+            if (import.meta.hot && !inWebWorker) {
+              window.$RefreshReg$ = prevRefreshReg;
+              window.$RefreshSig$ = prevRefreshSig;
+              RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+                RefreshRuntime.registerExportsForReactRefresh("/home/harsh-sharma/Desktop/CRUD-API/client/src/Components/AddUser/AddApi.jsx", currentExports);
+                import.meta.hot.accept((nextExports) => {
+                  if (!nextExports)
+                    return;
+                  const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+                  if (invalidateMessage)
+                    import.meta.hot.invalidate(invalidateMessage);
+                });
+              });
+            }
+
+            //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBQUEsT0FBT0Esb0JBQWtCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ3pCLFNBQVNDLG1CQUFtQjtBQUU1QixNQUFNQyxNQUFNLE9BQU9DLFNBQVM7QUFHMUIsTUFBSTtBQUNGLFVBQU1DLE1BQU0sTUFBTUosTUFBTUssS0FBSyxRQUFRRixJQUFJO0FBQ3pDLFFBQUlDLElBQUlELEtBQUtHLFNBQVM7QUFDcEJDLGNBQVFDLElBQUlKLElBQUlELElBQUk7QUFDcEIsYUFBT0MsSUFBSUQ7QUFBQUEsSUFFYixPQUFPO0FBQ0xJLGNBQVFFLE1BQU0sdUJBQXVCTCxJQUFJRCxLQUFLTyxPQUFPO0FBQ3JELGFBQU9OLElBQUlEO0FBQUFBLElBQ2I7QUFBQSxFQUNGLFNBQVNNLE9BQU87QUFDZEYsWUFBUUMsSUFBSUMsS0FBSztBQUNqQixVQUFNQTtBQUFBQSxFQUNSO0FBQ0Y7QUFBRUUsS0FqQklUO0FBbUJOLGVBQWVBO0FBQUksSUFBQVM7QUFBQUMsYUFBQUQsSUFBQSIsIm5hbWVzIjpbImF4aW9zIiwidXNlTmF2aWdhdGUiLCJBZGQiLCJkYXRhIiwicmVzIiwicG9zdCIsInN1Y2Nlc3MiLCJjb25zb2xlIiwibG9nIiwiZXJyb3IiLCJtZXNzYWdlIiwiX2MiLCIkUmVmcmVzaFJlZyQiXSwic291cmNlcyI6WyJBZGRBcGkuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBheGlvcyBmcm9tIFwiYXhpb3NcIjtcbmltcG9ydCB7IHVzZU5hdmlnYXRlIH0gZnJvbSBcInJlYWN0LXJvdXRlci1kb21cIjtcblxuY29uc3QgQWRkID0gYXN5bmMgKGRhdGEpID0+IHtcbiAgLy8gY29uc3QgTmF2aWdhdGUgPSB1c2VOYXZpZ2F0ZSgpO1xuXG4gIHRyeSB7XG4gICAgY29uc3QgcmVzID0gYXdhaXQgYXhpb3MucG9zdChcIi9hZGRcIiwgZGF0YSk7XG4gICAgaWYgKHJlcy5kYXRhLnN1Y2Nlc3MpIHtcbiAgICAgIGNvbnNvbGUubG9nKHJlcy5kYXRhKTtcbiAgICAgIHJldHVybiByZXMuZGF0YTtcbiAgICAgIC8vIE5hdmlnYXRlKFwiL1JlYWRcIilcbiAgICB9IGVsc2Uge1xuICAgICAgY29uc29sZS5lcnJvcihcIkZhaWxlZCB0byBhZGQgdXNlcjpcIiwgcmVzLmRhdGEubWVzc2FnZSk7XG4gICAgICByZXR1cm4gcmVzLmRhdGE7XG4gICAgfVxuICB9IGNhdGNoIChlcnJvcikge1xuICAgIGNvbnNvbGUubG9nKGVycm9yKTtcbiAgICB0aHJvdyBlcnJvcjtcbiAgfVxufTtcblxuZXhwb3J0IGRlZmF1bHQgQWRkO1xuIl0sImZpbGUiOiIvaG9tZS9oYXJzaC1zaGFybWEvRGVza3RvcC9DUlVELUFQSS9jbGllbnQvc3JjL0NvbXBvbmVudHMvQWRkVXNlci9BZGRBcGkuanN4In0=
+        status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:55.246567685+05:30
+        timestamp: 2025-06-27T19:05:51.999335213+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011915
+    created: 1751031351
 curl: |
     curl --request GET \
-      --url http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'Cache-Control: max-age=0' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Upgrade-Insecure-Requests: 1' \
-      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Referer: http://localhost:5173/Edit/66fd7ccc5aaa7ef7c1c5771b' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'Sec-Fetch-Mode: navigate' \
-      --header 'Sec-Fetch-Site: same-origin' \
+      --url http://localhost:5173/src/Components/AddUser/AddApi.jsx \
       --header 'Host: localhost:5173' \
-      --header 'Sec-Fetch-Dest: document' \
-      --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+      --header 'Referer: http://localhost:5173/src/Components/AddUser/Add.jsx' \
+      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \
       --header 'Connection: keep-alive' \
-      --header 'If-None-Match: W/"2a2-+TF4QPANxd7MncWl2uJwo2VI3UI"' \
-      --header 'Sec-Fetch-User: ?1' \
+      --header 'Accept: */*' \
+      --header 'Sec-Fetch-Site: same-origin' \
+      --header 'Sec-Fetch-Dest: script' \
+      --header 'If-None-Match: W/"7dc-K3O6+UrV67LVokonTGZp5JUP9cs"' \
+      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \

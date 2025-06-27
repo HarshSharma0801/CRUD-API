@@ -8,16 +8,16 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/src/Components/AddUser/AddApi.jsx
+        url: http://localhost:5173/src/index.css
         header:
             Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
             Connection: keep-alive
             Host: localhost:5173
-            If-None-Match: W/"7dc-K3O6+UrV67LVokonTGZp5JUP9cs"
+            If-None-Match: W/"43f9-VmR4Jysow2D80qZgpA2iV/Lk7Sk"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/src/Components/AddUser/Add.jsx
+            Referer: http://localhost:5173/src/main.jsx
             Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
             Sec-Ch-Ua-Mobile: ?0
             Sec-Ch-Ua-Platform: '"Linux"'
@@ -26,39 +26,39 @@ spec:
             Sec-Fetch-Site: same-origin
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:41:50.074788045+05:30
+        timestamp: 2025-06-27T19:05:49.865878579+05:30
     resp:
         status_code: 304
         header:
             Access-Control-Allow-Origin: '*'
             Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:11:50 GMT
+            Date: Fri, 27 Jun 2025 13:35:51 GMT
             Keep-Alive: timeout=5
         body: ""
         status_message: Not Modified
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:41:52.228535571+05:30
+        timestamp: 2025-06-27T19:05:51.794078692+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1751011912
+    created: 1751031351
 curl: |
     curl --request GET \
-      --url http://localhost:5173/src/Components/AddUser/AddApi.jsx \
+      --url http://localhost:5173/src/index.css \
       --header 'Sec-Ch-Ua-Mobile: ?0' \
-      --header 'Origin: http://localhost:5173' \
       --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
       --header 'Accept: */*' \
+      --header 'Referer: http://localhost:5173/src/main.jsx' \
+      --header 'If-None-Match: W/"43f9-VmR4Jysow2D80qZgpA2iV/Lk7Sk"' \
       --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Referer: http://localhost:5173/src/Components/AddUser/Add.jsx' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Sec-Fetch-Mode: cors' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
-      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Connection: keep-alive' \
-      --header 'Host: localhost:5173' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'If-None-Match: W/"7dc-K3O6+UrV67LVokonTGZp5JUP9cs"' \
+      --header 'Origin: http://localhost:5173' \
       --header 'Sec-Fetch-Dest: script' \
+      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Sec-Fetch-Site: same-origin' \
+      --header 'Host: localhost:5173' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Ch-Ua-Platform: "Linux"' \
+      --header 'Connection: keep-alive' \

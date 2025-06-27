@@ -8,57 +8,50 @@ spec:
         method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://localhost:5173/src/Components/EditUsers/UpdateApi.jsx
+        url: http://localhost:5173/
         header:
-            Accept: '*/*'
             Accept-Encoding: gzip, deflate, br, zstd
             Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
-            Connection: keep-alive
+            Cache-Control: no-cache
+            Connection: Upgrade
             Host: localhost:5173
-            If-None-Match: W/"7b6-vowEBJSGjqDOKLhlFcONIBWIz/o"
             Origin: http://localhost:5173
-            Referer: http://localhost:5173/src/Components/EditUsers/Edit.jsx
-            Sec-Ch-Ua: '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"'
-            Sec-Ch-Ua-Mobile: ?0
-            Sec-Ch-Ua-Platform: '"Linux"'
-            Sec-Fetch-Dest: script
-            Sec-Fetch-Mode: cors
-            Sec-Fetch-Site: same-origin
+            Pragma: no-cache
+            Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits
+            Sec-Websocket-Key: rdlTkTH1cTvYydY3P5xXYA==
+            Sec-Websocket-Protocol: vite-hmr
+            Sec-Websocket-Version: "13"
+            Upgrade: websocket
             User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
         body: ""
-        timestamp: 2025-06-27T13:42:26.871011169+05:30
+        timestamp: 2025-06-27T19:06:02.857002566+05:30
     resp:
-        status_code: 304
+        status_code: 101
         header:
-            Access-Control-Allow-Origin: '*'
-            Connection: keep-alive
-            Date: Fri, 27 Jun 2025 08:12:26 GMT
-            Keep-Alive: timeout=5
+            Connection: Upgrade
+            Sec-Websocket-Accept: TePADkq+4QoC43g40zzMTlZFUBk=
+            Sec-Websocket-Protocol: vite-hmr
+            Upgrade: websocket
         body: ""
-        status_message: Not Modified
+        status_message: Switching Protocols
         proto_major: 0
         proto_minor: 0
-        timestamp: 2025-06-27T13:42:26.988944662+05:30
+        timestamp: 2025-06-27T19:06:04.898978874+05:30
     objects: []
-    assertions:
-        noise:
-            header.Date: []
-    created: 1751011946
+    created: 1751031364
 curl: |
     curl --request GET \
-      --url http://localhost:5173/src/Components/EditUsers/UpdateApi.jsx \
-      --header 'Referer: http://localhost:5173/src/Components/EditUsers/Edit.jsx' \
-      --header 'Connection: keep-alive' \
-      --header 'Sec-Fetch-Dest: script' \
-      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
-      --header 'Sec-Ch-Ua-Platform: "Linux"' \
-      --header 'Sec-Ch-Ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
-      --header 'Sec-Fetch-Site: same-origin' \
-      --header 'Host: localhost:5173' \
-      --header 'If-None-Match: W/"7b6-vowEBJSGjqDOKLhlFcONIBWIz/o"' \
+      --url http://localhost:5173/ \
+      --header 'Sec-Websocket-Key: rdlTkTH1cTvYydY3P5xXYA==' \
+      --header 'Sec-Websocket-Protocol: vite-hmr' \
       --header 'Origin: http://localhost:5173' \
-      --header 'Sec-Fetch-Mode: cors' \
-      --header 'Accept: */*' \
-      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Host: localhost:5173' \
+      --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+      --header 'Connection: Upgrade' \
+      --header 'Sec-Websocket-Version: 13' \
       --header 'Accept-Encoding: gzip, deflate, br, zstd' \
-      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Pragma: no-cache' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Upgrade: websocket' \
+      --header 'Sec-Websocket-Extensions: permessage-deflate; client_max_window_bits' \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
