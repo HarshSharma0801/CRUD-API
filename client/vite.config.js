@@ -5,11 +5,13 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: "0.0.0.0",
+    port: 5173,
     proxy: {
-      "/add": "http://localhost:5000",
-      "/read": "http://localhost:5000",
-      "/edit": "http://localhost:5000",
-      "/delete": "http://localhost:5000",
+      "/add": "http://localhost:5001",
+      "/read": "http://localhost:5001",
+      "/edit": "http://localhost:5001",
+      "/delete": "http://localhost:5001",
     },
   },
 });

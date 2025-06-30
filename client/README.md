@@ -9,16 +9,37 @@ Currently, two official plugins are available:
 
 ## E2E Testing with Playwright & Keploy
 
-1. **Start your backend with Keploy enabled** (see backend README or Keploy docs).
-2. In a new terminal, start the frontend:
+### For Recording Frontend API Calls:
+
+1. **Start Keploy recording the frontend:**
    ```sh
-   npm run dev
+   sudo keploy record -c "npm run dev" --proxyPort 16789 --dnsPort 26789 --appPort 5173
    ```
-3. In another terminal, run Playwright tests:
+2. **In another terminal, run Playwright tests:**
    ```sh
    npm run test:e2e
    ```
-4. Keploy will record all API calls made by the frontend to the backend during these tests.
 
-- Playwright tests are located in the `e2e/` directory.
+### For Recording Backend API Calls:
+
+1. **Start your backend with Keploy enabled** on port 5001:
+   ```sh
+   sudo keploy record -c "npm run dev" --proxyPort 16789 --dnsPort 26789 --appPort 5001
+   ```
+2. **In another terminal, start the frontend:**
+   ```sh
+   npm run dev
+   ```
+   (Frontend will be available at http://192.168.5.15:5173)
+3. **In a third terminal, run Playwright tests:**
+   ```sh
+   npm run test:e2e
+   ```
+
+### Notes:
+
+- Frontend runs on `192.168.5.15:5173` (accessible from outside container/VM)
+- Backend API calls are proxied to `localhost:5001`
+- Keploy will record all API calls made by the frontend to the backend during tests
+- Playwright tests are located in the `e2e/` directory
 - To update Playwright snapshots: `npx playwright test --update-snapshots`

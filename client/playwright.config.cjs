@@ -6,7 +6,7 @@ const config = {
   timeout: 30000,
   retries: 0,
   use: {
-    baseURL: "http://localhost:5173",
+    baseURL: "http://192.168.5.15:5173",
     headless: true,
     screenshot: "only-on-failure",
     video: "retain-on-failure",

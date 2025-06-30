@@ -1,1 +1,1 @@
-sudo keploy record -c "/home/harsh-sharma/.nvm/versions/node/v20.17.0/bin/npm run test:e2e" --proxyPort 16789 --dnsPort 26789
+sudo keploy record -c "npm run test:e2e" --proxyPort 16789 --dnsPort 26789
