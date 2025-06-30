@@ -11,7 +11,7 @@ function App() {
 
 
   // axios.defaults.baseURL = 'https://syncwiz-backend.onrender.com';
-  axios.defaults.baseURL = 'http://localhost:5000';
+  axios.defaults.baseURL = 'http://localhost:5001';
 
   return (
     <>
