@@ -1,20 +1,17 @@
 import express from "express";
 import Users from "../Modals/UserDetails.js";
-const Deleted = express();
+const deleteUserRouter = express();
 
-Deleted.post("/delete", async (req, res) => {
-  const id = req.body.id;
-
+deleteUserRouter.post("/delete", async (req, res) => {
+  const userId = req.body.id;
   try {
-    console.log(id);
-    await Users.findByIdAndDelete(id);
+    await Users.findByIdAndDelete(userId);
     res.status(200).json({
       success: true,
       message: "User deleted successfully",
-      data: { id: id },
+      id: userId,
     });
-
-    console.log("deleted");
+    console.log("Deleted User", userId);
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -25,4 +22,4 @@ Deleted.post("/delete", async (req, res) => {
   }
 });
 
-export default Deleted;
+export default deleteUserRouter;

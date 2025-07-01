@@ -1,0 +1,143 @@
+openapi: 3.0.0
+info:
+    title: test-21
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:5001
+paths:
+    /delete:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173/
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json, text/plain, */*
+                - name: Accept-Language
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: en-US
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+                - name: Sec-Ch-Ua-Platform
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Linux"'
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:5001
+                - name: Sec-Ch-Ua
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"'
+                - name: Sec-Ch-Ua-Mobile
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: ?0
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cross-site
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "33"
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+            operationId: 0f31072b25bca165ef6b485ca688c17b-20250630235517
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                id:
+                                    type: string
+                        example:
+                            id: 6862bfe36f7df083b8325b4d
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        properties:
+                                            id:
+                                                type: string
+                                        type: object
+                                    message:
+                                        type: string
+                                    success:
+                                        type: boolean
+                            example:
+                                data:
+                                    id: 6862bfe36f7df083b8325b4d
+                                message: User deleted successfully
+                                success: true
+components: {}

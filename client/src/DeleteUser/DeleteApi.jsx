@@ -1,17 +1,17 @@
 import axios from "axios";
 
-const Delete = async (id) => {
-  const sentdata = {
-    id: id,
+const deleteUserApi = async (userId) => {
+  const requestData = {
+    id: userId,
   };
   try {
-    const res = await axios.post("/delete", sentdata);
-    if (res.data.success) {
-      console.log(res.data);
-      return res.data;
+    const response = await axios.post("/delete", requestData);
+    if (response.data.success) {
+      console.log(response.data);
+      return response.data;
     } else {
-      console.error("Failed to delete user:", res.data.message);
-      return res.data;
+      console.error("Failed to delete user:", response.data.message);
+      return response.data;
     }
   } catch (error) {
     console.log(error);
@@ -19,4 +19,4 @@ const Delete = async (id) => {
   }
 };
 
-export default Delete;
+export default deleteUserApi;

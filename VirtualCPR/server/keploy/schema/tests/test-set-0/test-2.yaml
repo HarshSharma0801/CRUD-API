@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+    title: test-2
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:5001
+paths:
+    /read:
+        get:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Sec-Ch-Ua-Platform
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Linux"'
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cross-site
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json, text/plain, */*
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173/
+                - name: Sec-Ch-Ua
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"'
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+                - name: Accept-Language
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: en-US
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:5001
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173
+                - name: Sec-Ch-Ua-Mobile
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: ?0
+            operationId: abaf60437d1f83434cdc6efed6aa0fa3-20250630235517
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        items:
+                                            properties:
+                                                __v:
+                                                    type: number
+                                                _id:
+                                                    type: string
+                                                YourQuote:
+                                                    type: string
+                                                githubUsername:
+                                                    type: string
+                                                name:
+                                                    type: string
+                                            type: object
+                                        type: array
+                                    message:
+                                        type: string
+                                    success:
+                                        type: boolean
+                            example:
+                                data:
+                                    - __v: 0
+                                      _id: 6862bec26f7df083b8325b24
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6862beef6f7df083b8325b36
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6862bfda6f7df083b8325b43
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6862bfe36f7df083b8325b4d
+                                      YourQuote: Testing full flow
+                                      githubUsername: flowtest123
+                                      name: Flow Test User
+                                message: Users fetched successfully
+                                success: true
+components: {}

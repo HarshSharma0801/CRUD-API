@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+    title: test-4
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:5001
+paths:
+    /edit/6862bec26f7df083b8325b24:
+        options:
+            summary: CORS preflight request
+            description: Auto-generated CORS preflight operation
+            parameters:
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cross-site
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Access-Control-Request-Headers
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: content-type
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Access-Control-Request-Method
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: POST
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:5001
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://192.168.5.15:5173/
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+            operationId: 5efacda7c852e7eef4f40c092e529f2d-20250630235517
+            responses:
+                "204":
+                    description: No Content
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties: {}
+                            example: {}
+components: {}

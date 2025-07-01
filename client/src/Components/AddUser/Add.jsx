@@ -1,14 +1,13 @@
-import Add from './AddApi';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import addUserApi from "./AddApi";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddUserForm = ()=>{
-
-  const Navigate = useNavigate();
+const AddUserForm = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
-    name: '',
-    githubUsername: '',
-    YourQuote: '',
+    name: "",
+    githubUsername: "",
+    YourQuote: "",
   });
 
   const handleChange = (e) => {
@@ -19,28 +18,31 @@ const AddUserForm = ()=>{
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     console.log(userData);
-    
-  if(Add(userData)){
-    Navigate('/Read')
-  }
-
+    const result = await addUserApi(userData);
+    if (result && result.success) {
+      navigate("/Read");
+    }
     setUserData({
-      name: '',
-      githubUsername: '',
-      YourQuote: '',
-  
+      name: "",
+      githubUsername: "",
+      YourQuote: "",
     });
   };
 
   return (
     <div className="max-w-md mx-auto mt-8">
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="name"
+          >
             Name
           </label>
           <input
@@ -54,14 +56,16 @@ const AddUserForm = ()=>{
             required
           />
         </div>
-     
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="githubUsername"
+          >
             GitHub Username
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="Github"
+            id="githubUsername"
             type="text"
             placeholder="GitHub Username"
             name="githubUsername"
@@ -71,12 +75,15 @@ const AddUserForm = ()=>{
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="YourQuote"
+          >
             Your Quote
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="quote"
+            id="YourQuote"
             type="text"
             placeholder="Your Quote"
             name="YourQuote"
@@ -85,12 +92,10 @@ const AddUserForm = ()=>{
             required
           />
         </div>
-    
-      
         <div className="flex items-center justify-between">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit" 
+            type="submit"
           >
             Add User
           </button>
@@ -98,6 +103,6 @@ const AddUserForm = ()=>{
       </form>
     </div>
   );
-}
+};
 
 export default AddUserForm;

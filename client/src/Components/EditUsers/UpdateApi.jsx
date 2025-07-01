@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const Update = async (data, id) => {
+const updateUserApi = async (userData, userId) => {
   try {
-    data._id = id;
-    const res = await axios.post(`/edit/${id}`, data);
-    if (res.data.success) {
-      console.log(res.data);
-      return res.data;
+    userData._id = userId;
+    const response = await axios.post(`/edit/${userId}`, userData);
+    if (response.data.success) {
+      console.log(response.data);
+      return response.data;
     } else {
-      console.error("Failed to update user:", res.data.message);
-      return res.data;
+      console.error("Failed to update user:", response.data.message);
+      return response.data;
     }
   } catch (error) {
     console.log(error);
@@ -17,4 +17,4 @@ const Update = async (data, id) => {
   }
 };
 
-export default Update;
+export default updateUserApi;

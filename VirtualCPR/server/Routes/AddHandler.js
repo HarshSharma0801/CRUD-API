@@ -1,16 +1,15 @@
 import express from "express";
 import Users from "../Modals/UserDetails.js";
-const Added = express();
+const addUserRouter = express();
 
-Added.post("/add", async (req, res) => {
+addUserRouter.post("/add", async (req, res) => {
   try {
-    const data = req.body;
-
-    await Users.insertMany([data]);
+    const userData = req.body;
+    await Users.insertMany([userData]);
     res.status(200).json({
       success: true,
       message: "User added successfully",
-      data: data,
+      data: userData,
     });
     console.log("Added User");
   } catch (error) {
@@ -23,4 +22,4 @@ Added.post("/add", async (req, res) => {
   }
 });
 
-export default Added;
+export default addUserRouter;

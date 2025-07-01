@@ -1,0 +1,8 @@
+servicesMapping:
+    crud-client:
+        - localhost:5173
+        - /add
+        - /read
+        - /edit/:id
+        - /delete/:id
+self: server

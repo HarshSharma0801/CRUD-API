@@ -1,29 +1,26 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Update from "./UpdateApi";
+import updateUserApi from "./UpdateApi";
 import axios from "axios";
-const Edit = () => {
+
+const EditUserForm = () => {
   const [userData, setUserData] = useState({
     name: "",
     githubUsername: "",
     YourQuote: "",
   });
 
-  const [info, Setinfo] = useState({});
+  const [userInfo, setUserInfo] = useState({});
+  const navigate = useNavigate();
+  const { id: userId } = useParams();
 
-  const Navigate = useNavigate();
-
-  const { id } = useParams();
-
-  const getUser = async () => {
+  const fetchUser = async () => {
     try {
-      const res = await axios.get(`/edit/${id}`);
-      console.log(id);
-      if (res.data.success) {
-        console.log(res.data.data);
-        setUserData(res.data.data);
+      const response = await axios.get(`/edit/${userId}`);
+      if (response.data.success) {
+        setUserData(response.data.data);
       } else {
-        console.error("Failed to fetch user:", res.data.message);
+        console.error("Failed to fetch user:", response.data.message);
       }
     } catch (error) {
       console.log(error);
@@ -31,7 +28,7 @@ const Edit = () => {
   };
 
   useEffect(() => {
-    getUser();
+    fetchUser();
   }, []);
 
   const handleChange = (e) => {
@@ -44,23 +41,20 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(userData);
-    Update(userData, id);
-
+    updateUserApi(userData, userId);
     setUserData({
       name: "",
       githubUsername: "",
       YourQuote: "",
     });
     setTimeout(() => {
-      Navigate("/Read");
+      navigate("/Read");
     }, 1000);
   };
 
   useEffect(() => {
-    setUserData(info);
-  }, [info]);
+    setUserData(userInfo);
+  }, [userInfo]);
 
   return (
     <div className="max-w-md mx-auto mt-8">
@@ -86,17 +80,16 @@ const Edit = () => {
             required
           />
         </div>
-
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="email"
+            htmlFor="githubUsername"
           >
             GitHub Username
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="Github"
+            id="githubUsername"
             type="text"
             placeholder="GitHub Username"
             name="githubUsername"
@@ -105,17 +98,16 @@ const Edit = () => {
             required
           />
         </div>
-
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="email"
+            htmlFor="YourQuote"
           >
             Your Quote
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="quote"
+            id="YourQuote"
             type="text"
             placeholder="Your Quote"
             name="YourQuote"
@@ -124,7 +116,6 @@ const Edit = () => {
             required
           />
         </div>
-
         <div className="flex items-center justify-between">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -138,4 +129,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default EditUserForm;

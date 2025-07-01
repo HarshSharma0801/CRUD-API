@@ -86,7 +86,7 @@ test.describe("CRUD API E2E Tests", () => {
     await page.click("button:has-text('Delete')");
 
     // Wait a moment for deletion to process and redirect
-    await page.waitForTimeout(1500);
+    await page.waitForTimeout(2000);
 
     // Should still be on /Read page
     await expect(page).toHaveURL("/Read");
@@ -97,47 +97,39 @@ test.describe("CRUD API E2E Tests", () => {
   });
 
   test("5. Full CRUD Flow", async ({ page }) => {
-    // Create a user
-    await page.click("a[href='/AddUser']");
-    await page.fill("input[name='name']", "Flow Test User");
-    await page.fill("input[name='githubUsername']", "flowtest123");
-    await page.fill("input[name='YourQuote']", "Testing full flow");
-    await page.click("button[type='submit']");
-
-    // Read - verify user was created
+    const uniqueName = `Flow Test User ${Date.now()}`;
+    await page.click('a[href="/AddUser"]');
+    await page.fill('input[name="name"]', uniqueName);
+    await page.fill('input[name="githubUsername"]', "flowtest123");
+    await page.fill('input[name="YourQuote"]', "Testing full flow");
+    await page.click('button[type="submit"]');
     await expect(page).toHaveURL("/Read");
-    await expect(page.locator("text=Flow Test User")).toBeVisible();
-
-    // Edit the user
+    await expect(
+      page.locator(`tr:has-text('${uniqueName}')`).first()
+    ).toBeVisible();
     await page
-      .locator("tr:has-text('Flow Test User')")
-      .locator("button:has-text('Edit')")
+      .locator(`tr:has-text('${uniqueName}')`)
+      .locator('button:has-text("Edit")')
       .click();
-    await page.waitForFunction(() => {
-      const nameInput = document.querySelector("input[name='name']");
-      return nameInput && nameInput.value === "Flow Test User";
-    });
-    await page.fill("input[name='name']", "Flow Test User Updated");
-    await page.click("button[type='submit']");
-
-    // Verify update
+    await page.waitForFunction((name) => {
+      const nameInput = document.querySelector('input[name="name"]');
+      return nameInput && nameInput.value === name;
+    }, uniqueName);
+    await page.fill('input[name="name"]', `${uniqueName} Updated`);
+    await page.click('button[type="submit"]');
     await expect(page).toHaveURL("/Read");
-    await expect(page.locator("text=Flow Test User Updated")).toBeVisible();
-
-    // Delete the user
+    await expect(
+      page.locator(`tr:has-text('${uniqueName} Updated')`).first()
+    ).toBeVisible();
     await page
-      .locator("tr:has-text('Flow Test User Updated')")
-      .locator("button:has-text('Delete')")
+      .locator(`tr:has-text('${uniqueName} Updated')`)
+      .locator('button:has-text("Delete")')
       .click();
-    await page.waitForTimeout(2000); // Increased wait time
-
-    // Refresh the page to ensure we see the updated state
+    await page.waitForTimeout(2000);
     await page.reload();
     await page.waitForLoadState("networkidle");
-
-    // Verify deletion - check if the user is no longer in the table
     const userExists = await page
-      .locator("text=Flow Test User Updated")
+      .locator(`tr:has-text('${uniqueName} Updated')`)
       .count();
     expect(userExists).toBe(0);
   });

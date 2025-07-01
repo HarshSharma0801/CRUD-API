@@ -7567,3 +7567,111 @@ spec:
     created: 1751307694
     reqTimestampMock: 2025-06-30T23:51:34.194501638+05:30
     resTimestampMock: 2025-06-30T23:51:34.528098292+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-210
+spec:
+    metadata:
+        connID: "8"
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":10}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 154
+            requestId: 212
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":10}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10009586470
+    responses:
+        - header:
+            length: 1102
+            requestId: 144488716
+            responseTo: 212
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"topologyVersion":{"processId":{"$oid":"68505073c18bdb236d5c0be8"},"counter":{"$numberLong":"4"}},"hosts":["ac-ocxphrt-shard-00-00.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-02.wjbiut0.mongodb.net:27017"],"setName":"atlas-y4neua-shard-0","setVersion":{"$numberInt":"84"},"isWritablePrimary":false,"secondary":true,"primary":"ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","tags":{"workloadType":"OPERATIONAL","availabilityZone":"use1-az4","provider":"AWS","diskState":"READY","region":"US_EAST_1","nodeType":"ELECTABLE"},"me":"ac-ocxphrt-shard-00-00.wjbiut0.mongodb.net:27017","lastWrite":{"opTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"lastWriteDate":{"$date":{"$numberLong":"1751307704000"}},"majorityOpTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"majorityWriteDate":{"$date":{"$numberLong":"1751307704000"}}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1751307704675"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"255399"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"25"},"readOnly":false,"ok":{"$numberDouble":"1.0"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307704,"i":18}},"signature":{"hash":{"$binary":{"base64":"RXJIJgT6593DHxO0hdxoxEt7KCs=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"operationTime":{"$timestamp":{"t":1751307704,"i":18}}} }'
+            checksum: 0
+          read_delay: 324846216
+    created: 1751307704
+    reqTimestampMock: 2025-06-30T23:51:44.532756692+05:30
+    resTimestampMock: 2025-06-30T23:51:44.858674919+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-211
+spec:
+    metadata:
+        connID: "12"
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":10}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 154
+            requestId: 211
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":10}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10008905728
+    responses:
+        - header:
+            length: 1102
+            requestId: 145457676
+            responseTo: 211
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"topologyVersion":{"processId":{"$oid":"685054d93d3f2b0cd1fc5eec"},"counter":{"$numberLong":"3"}},"hosts":["ac-ocxphrt-shard-00-00.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-02.wjbiut0.mongodb.net:27017"],"setName":"atlas-y4neua-shard-0","setVersion":{"$numberInt":"84"},"isWritablePrimary":false,"secondary":true,"primary":"ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","tags":{"region":"US_EAST_1","workloadType":"OPERATIONAL","availabilityZone":"use1-az5","diskState":"READY","nodeType":"ELECTABLE","provider":"AWS"},"me":"ac-ocxphrt-shard-00-02.wjbiut0.mongodb.net:27017","lastWrite":{"opTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"lastWriteDate":{"$date":{"$numberLong":"1751307704000"}},"majorityOpTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"majorityWriteDate":{"$date":{"$numberLong":"1751307704000"}}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1751307704691"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"253920"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"25"},"readOnly":false,"ok":{"$numberDouble":"1.0"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307704,"i":18}},"signature":{"hash":{"$binary":{"base64":"RXJIJgT6593DHxO0hdxoxEt7KCs=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"operationTime":{"$timestamp":{"t":1751307704,"i":18}}} }'
+            checksum: 0
+          read_delay: 330144603
+    created: 1751307704
+    reqTimestampMock: 2025-06-30T23:51:44.532328212+05:30
+    resTimestampMock: 2025-06-30T23:51:44.863107597+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-212
+spec:
+    metadata:
+        connID: "10"
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":11}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 154
+            requestId: 213
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307694,"i":11}},"signature":{"hash":{"$binary":{"base64":"fcaylOKZZuK+/mKjS39F4kI/Xag=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10004901328
+    responses:
+        - header:
+            length: 1126
+            requestId: 456314188
+            responseTo: 213
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"topologyVersion":{"processId":{"$oid":"6850529293a5d95b9a2b0363"},"counter":{"$numberLong":"6"}},"hosts":["ac-ocxphrt-shard-00-00.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","ac-ocxphrt-shard-00-02.wjbiut0.mongodb.net:27017"],"setName":"atlas-y4neua-shard-0","setVersion":{"$numberInt":"84"},"isWritablePrimary":true,"secondary":false,"primary":"ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","tags":{"availabilityZone":"use1-az6","region":"US_EAST_1","diskState":"READY","workloadType":"OPERATIONAL","provider":"AWS","nodeType":"ELECTABLE"},"me":"ac-ocxphrt-shard-00-01.wjbiut0.mongodb.net:27017","electionId":{"$oid":"7fffffff0000000000000261"},"lastWrite":{"opTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"lastWriteDate":{"$date":{"$numberLong":"1751307704000"}},"majorityOpTime":{"ts":{"$timestamp":{"t":1751307704,"i":18}},"t":{"$numberLong":"609"}},"majorityWriteDate":{"$date":{"$numberLong":"1751307704000"}}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1751307704698"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"256737"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"25"},"readOnly":false,"ok":{"$numberDouble":"1.0"},"$clusterTime":{"clusterTime":{"$timestamp":{"t":1751307704,"i":18}},"signature":{"hash":{"$binary":{"base64":"RXJIJgT6593DHxO0hdxoxEt7KCs=","subType":"00"}},"keyId":{"$numberLong":"7463926043959623684"}}},"operationTime":{"$timestamp":{"t":1751307704,"i":18}}} }'
+            checksum: 0
+          read_delay: 336906979
+    created: 1751307704
+    reqTimestampMock: 2025-06-30T23:51:44.533324845+05:30
+    resTimestampMock: 2025-06-30T23:51:44.870689138+05:30

@@ -1,15 +1,15 @@
 import express from "express";
 import Users from "../Modals/UserDetails.js";
 
-const Read = express();
+const readUserRouter = express();
 
-Read.get("/read", async (req, res) => {
+readUserRouter.get("/read", async (req, res) => {
   try {
-    const data = await Users.find();
+    const users = await Users.find();
     res.status(200).json({
       success: true,
       message: "Users fetched successfully",
-      data: data,
+      data: users,
     });
   } catch (error) {
     console.log(error);
@@ -21,4 +21,4 @@ Read.get("/read", async (req, res) => {
   }
 });
 
-export default Read;
+export default readUserRouter;

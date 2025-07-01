@@ -1,53 +1,47 @@
-import {  Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import Delete from '../../DeleteUser/DeleteApi';
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import deleteUserApi from "../../DeleteUser/DeleteApi";
 
-const Layout = (props) => {
-
-  const Navigate = useNavigate()
-  const Deleted = async ()=>{
-    
-    await Delete(props.id);
-    console.log(props.id)
-    setTimeout(()=>{
-      
-      Navigate("/Read")
-
-    },1000)
-
-  }
-
+const UserTableRow = (props) => {
+  const navigate = useNavigate();
+  const handleDeleteUser = async () => {
+    await deleteUserApi(props.id);
+    console.log(props.id);
+    setTimeout(() => {
+      navigate("/Read");
+    }, 1000);
+  };
 
   return (
-    <>
-    <tr class="text-gray-700">
-      <td class="px-4 py-3 border">
-        <div class="flex items-center text-sm">
+    <tr className="text-gray-700">
+      <td className="px-4 py-3 border">
+        <div className="flex items-center text-sm">
           <div>
-            <p class="font-semibold text-black">{props.name}</p>
+            <p className="font-semibold text-black">{props.name}</p>
           </div>
         </div>
       </td>
-
-      <td class="px-4 py-3 text-ms font-semibold border text-gray-600">
-        {props.Github}
+      <td className="px-4 py-3 text-ms font-semibold border text-gray-600">
+        {props.githubUsername}
       </td>
-
-      <td class="px-4 py-3 text-sm border">{props.msg}</td>
-
-
-      <td class="px-4 py-3 text-sm border">
+      <td className="px-4 py-3 text-sm border">{props.yourQuote}</td>
+      <td className="px-4 py-3 text-sm border">
         <Link to={`/Edit/${props.id}`}>
-        <button className="w-24 bg-blued text-black rounded-md hover:bg-blueded" >Edit</button>
+          <button className="w-24 bg-blued text-black rounded-md hover:bg-blueded">
+            Edit
+          </button>
         </Link>
       </td>
-
-      <td class="px-4 py-3 text-sm border">
-        <button className="w-24 bg-red-500 text-black rounded-md hover:bg-redded" onClick={Deleted}>Delete</button>
+      <td className="px-4 py-3 text-sm border">
+        <button
+          className="w-24 bg-red-500 text-black rounded-md hover:bg-redded"
+          onClick={handleDeleteUser}
+        >
+          Delete
+        </button>
       </td>
     </tr>
-    </>
-    
   );
 };
-export default Layout;
+
+export default UserTableRow;
