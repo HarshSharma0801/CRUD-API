@@ -1,1 +1,1 @@
-sudo keploy record -c "npm run test:e2e" --proxyPort 16789 --dnsPort 26789
+keploy record -c "npm run test:e2e" --proxyPort 16789 --dnsPort 26789
