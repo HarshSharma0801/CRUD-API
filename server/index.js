@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const ConnectionString = "mongodb+srv://Harsh2:dragonite1@forprojects.wjbiut0.mongodb.net/SyncWiz";
+const ConnectionString = process.env.MONGO_URL || "mongodb://localhost:27017/CRUD-API";
 
 mongoose.connect(ConnectionString, {
   useNewUrlParser: true,
