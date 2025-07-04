@@ -1,0 +1,4 @@
+keploy record -c "npm run dev" --proxyPort 16789 --dnsPort 26789
+
+
+npm run test:e2e

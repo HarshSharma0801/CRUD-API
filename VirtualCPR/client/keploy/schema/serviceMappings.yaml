@@ -1,0 +1,7 @@
+servicesMapping:
+    server:
+        - /add
+        - /read
+        - /edit/:id
+        - /delete/:id
+self: client

@@ -1,3 +1,0 @@
-
-
-keploy record -c "node index.js" --proxyPort 36789 --dnsPort 46789
