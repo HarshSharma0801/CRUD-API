@@ -41,7 +41,7 @@ cmdType: native
 contract:
   services: []
   tests: []
-  path: ""
+  path: "keploy"
   download: false
   generate: false
   driven: "provider"

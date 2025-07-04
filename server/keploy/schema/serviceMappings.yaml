@@ -1,0 +1,8 @@
+servicesMapping:
+    client:
+        - localhost:16789
+        - /add
+        - /read
+        - /edit/:id
+        - /delete/:id
+self: server

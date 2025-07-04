@@ -1,0 +1,60 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-15
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: /edit/68680c88a6e2b60538580c1f
+        header:
+            Accept: application/json, text/plain, */*
+            Accept-Encoding: gzip, deflate, br, zstd
+            Accept-Language: en-US
+            Connection: keep-alive
+            Origin: http://localhost:5173
+            Referer: http://localhost:5173/
+            Sec-Ch-Ua: '"Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"macOS"'
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+        body: ""
+        timestamp: 2025-07-04T22:46:58.129923+05:30
+    resp:
+        status_code: 200
+        header:
+            Access-Control-Allow-Origin: '*'
+            Connection: keep-alive
+            Content-Length: "203"
+            Content-Type: application/json; charset=utf-8
+            Date: Fri, 04 Jul 2025 17:16:58 GMT
+            Etag: W/"cb-nCJJg9YFSxjigVSg0jRLmIvczn0"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: '{"success":true,"message":"User found successfully","data":{"_id":"68680c88a6e2b60538580c1f","name":"Flow Test User 1751649416762","githubUsername":"flowtest123","YourQuote":"Testing full flow","__v":0}}'
+        status_message: 200 OK
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2025-07-04T22:46:58.129926+05:30
+    objects: []
+    created: 1751649418
+curl: |
+    curl --request GET \
+      --url /edit/68680c88a6e2b60538580c1f \
+      --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36' \
+      --header 'Accept: application/json, text/plain, */*' \
+      --header 'Sec-Ch-Ua: "Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"' \
+      --header 'Sec-Ch-Ua-Platform: "macOS"' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Fetch-Dest: empty' \
+      --header 'Accept-Language: en-US' \
+      --header 'Connection: keep-alive' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Accept-Encoding: gzip, deflate, br, zstd' \
+      --header 'Sec-Fetch-Site: same-site' \
+      --header 'Referer: http://localhost:5173/' \
