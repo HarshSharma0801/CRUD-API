@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+    title: test-6
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:16789
+paths:
+    /edit/68676dab20c4ea6d0b39e3ba:
+        get:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json, text/plain, */*
+                - name: Accept-Language
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: en-US
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Sec-Ch-Ua
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"'
+                - name: Sec-Ch-Ua-Platform
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"macOS"'
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: same-site
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:16789
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173/
+                - name: Sec-Ch-Ua-Mobile
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: ?0
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+            operationId: 793b089806f6209df59efe738cee0fc8-20250706153043
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        properties:
+                                            __v:
+                                                type: number
+                                            _id:
+                                                type: string
+                                            YourQuote:
+                                                type: string
+                                            githubUsername:
+                                                type: string
+                                            name:
+                                                type: string
+                                        type: object
+                                    message:
+                                        type: string
+                                    success:
+                                        type: boolean
+                            example:
+                                data:
+                                    __v: 0
+                                    _id: 68676dab20c4ea6d0b39e3ba
+                                    YourQuote: This is a test quote
+                                    githubUsername: testuser123
+                                    name: Test User
+                                message: User found successfully
+                                success: true
+components: {}

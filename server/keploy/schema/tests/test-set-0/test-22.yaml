@@ -1,0 +1,200 @@
+openapi: 3.0.0
+info:
+    title: test-22
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:16789
+paths:
+    /read:
+        get:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Sec-Fetch-Site
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: same-site
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json, text/plain, */*
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:16789
+                - name: Sec-Ch-Ua
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"Not)A;Brand";v="8", "Chromium";v="138", "HeadlessChrome";v="138"'
+                - name: Sec-Fetch-Dest
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: empty
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.23 Safari/537.36
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br, zstd
+                - name: Accept-Language
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: en-US
+                - name: Origin
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173
+                - name: Referer
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: http://localhost:5173/
+                - name: Sec-Ch-Ua-Mobile
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: ?0
+                - name: Sec-Ch-Ua-Platform
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '"macOS"'
+                - name: Sec-Fetch-Mode
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: cors
+            operationId: 18d3fa695661fa5d80daf4f5695bcf87-20250706153043
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    data:
+                                        items:
+                                            properties:
+                                                __v:
+                                                    type: number
+                                                _id:
+                                                    type: string
+                                                YourQuote:
+                                                    type: string
+                                                githubUsername:
+                                                    type: string
+                                                name:
+                                                    type: string
+                                            type: object
+                                        type: array
+                                    message:
+                                        type: string
+                                    success:
+                                        type: boolean
+                            example:
+                                data:
+                                    - __v: 0
+                                      _id: 686773ab676b8c8532ae2da3
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6867f605798e98fd56b6b170
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6867f8cac5ee261f2ef0e903
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6867fc079b271a8b6aea9699
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6867fd7af0988f5fea8b5a48
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 6867fe4a3b0e9dde098a8c44
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686802139ad73114af3e8810
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686803ea3632090141606ad1
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686805a7b02d2a26984c8155
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686809b4ce6facc4a80a167a
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 68680c50a6e2b60538580c12
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 68680c7fa6e2b60538580c15
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686a418d983390276f3627d5
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                    - __v: 0
+                                      _id: 686a490879dcf6d2949a7bfa
+                                      YourQuote: This is a test quote
+                                      githubUsername: testuser123
+                                      name: Test User
+                                message: Users fetched successfully
+                                success: true
+components: {}

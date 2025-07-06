@@ -126,3 +126,41 @@ This will create OpenAPI schemas based on the recorded traffic.
 ---
 
 For more details, see the `command.txt` files in each directory or the Keploy documentation.
+
+## ⚡ Quick-Start Cheat-Sheet (Playwright Focused)
+
+1. **Install deps**
+   ```bash
+   npm install          # backend (CRUD-API/server)
+   cd VirtualCPR/client && npm install   # frontend
+   ```
+2. **Start backend with traffic recorder**
+   ```bash
+   cd CRUD-API/server
+   keploy record -c "node index.js" --proxyPort 36789 --dnsPort 46789
+   ```
+3. **Launch Keploy reverse proxy**
+   ```bash
+   keploy reverse-proxy --proxy-port 16789 --forward-to localhost:5001
+   ```
+4. **Run the React dev server**
+   ```bash
+   cd VirtualCPR/client && npm run dev
+   ```
+5. **Execute E2E flow (Playwright)**
+   ```bash
+   npm run test:e2e      # triggers full CRUD cycle -> traffic captured
+   ```
+6. **Generate OpenAPI in both roots**
+   ```bash
+   keploy contract generate   # run once in server & once in client
+   ```
+7. **Validate contracts** (run inside `server/`)
+   ```bash
+   keploy contract test --driven "consumer" --proxy
+   ```
+
+> Want to click around manually instead of Playwright?  
+> Skip step 5 and just interact with the UI; Keploy records the same way.
+
+---

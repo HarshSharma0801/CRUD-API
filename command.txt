@@ -1,5 +1,5 @@
 keploy contract generate
 
-keploy contract test --driven "consumer" 
+keploy contract test --driven "consumer" --proxy
 
 keploy reverse-proxy --proxy-port 16789 --forward-to localhost:5001
